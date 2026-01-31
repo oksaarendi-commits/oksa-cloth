@@ -1,43 +1,54 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'screens/home_screen.dart';
+import 'screens/catalog_screen.dart';
+import 'screens/cart_screen.dart';
+import 'screens/checkout_screen.dart';
+import 'screens/history_screen.dart';
+import 'screens/admin/inventory_screen.dart';
+import 'screens/admin/product_form_screen.dart';
+import 'screens/admin/report_screen.dart';
+import 'models/product.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(const OksaClothApp());
+}
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class OksaClothApp extends StatelessWidget {
+  const OksaClothApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
+      title: 'oksa.cloth',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // useMaterial3: false,
         primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
+        textTheme: GoogleFonts.manropeTextTheme(
+          Theme.of(context).textTheme,
         ),
+        scaffoldBackgroundColor: Colors.white,
       ),
+      initialRoute: '/',
+      onGenerateRoute: (settings) {
+        if (settings.name == '/admin/edit-product') {
+          final product = settings.arguments as Product?;
+          return MaterialPageRoute(
+            builder: (context) => AdminProductFormScreen(product: product),
+          );
+        }
+        return null;
+      },
+      routes: {
+        '/': (context) => const HomeScreen(),
+        '/catalog': (context) => const CatalogScreen(),
+        '/cart': (context) => const CartScreen(),
+        '/checkout': (context) => const CheckoutScreen(),
+        '/history': (context) => const HistoryScreen(),
+        '/admin/inventory': (context) => const AdminInventoryScreen(),
+        '/admin/add-product': (context) => const AdminProductFormScreen(),
+        '/admin/report': (context) => const AdminReportScreen(),
+      },
     );
   }
 }
