@@ -1,0 +1,70 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+.idea/
+.vscode/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The Python spec of the package is index-based, so its name can change.
+# app.dill
+# app.dill.incremental.dill
+# app.dill.debug.dill
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+**/ios/Flutter/App.framework
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/Flutter/flutter_framework_list.json
+**/ios/Flutter/podhelper.rb
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.packages
+**/.pub-cache/
+**/.pub/
+**/build/
+pubspec.lock
+
+# Android related
+**/android/app/src/main/res/values/strings.xml
+**/android/local.properties
+**/android/key.properties
+**/android/app/google-services.json
+**/android/.gradle/
+**/android/app/build/
+**/android/app/src/main/res/drawable-*/
+**/android/app/src/main/res/mipmap-*/
+**/android/app/src/main/res/values/styles.xml
+**/android/app/src/main/res/values-v21/styles.xml
+**/android/app/src/main/res/xml/
+**/android/app/src/main/res/layout/
+**/android/app/src/main/res/mipmap-anydpi-v26/
+**/android/app/src/main/res/values-night/
+**/android/app/src/main/res/values-v21/
+**/android/app/src/main/res/values-v28/
+**/android/app/src/main/res/values-v29/
+**/android/app/src/main/res/values-v31/
+
+# Web related
+**/build/web/
+
+# Symbolic links to the Flutter SDK
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/Flutter/flutter_framework_list.json
+**/ios/Flutter/podhelper.rb
